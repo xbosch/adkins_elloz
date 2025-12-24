@@ -1,0 +1,213 @@
+/* =========================
+   Reset
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Base
+   ========================= */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #ffffff;
+  color: #000000;
+  line-height: 1.5;
+}
+
+/* =========================
+   Navigation
+   ========================= */
+nav {
+  max-width: 900px;
+  margin: 40px auto 120px auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 14px;
+  text-decoration: none;
+  color: #000000;
+  font-size: 13px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Main container
+   ========================= */
+main {
+  max-width: 900px;
+  margin: 0 auto 120px auto;
+  padding: 0 24px;
+}
+
+/* =========================
+   Headings
+   ========================= */
+h1 {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+/* =========================
+   Text
+   ========================= */
+p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  max-width: 640px;
+}
+
+/* =========================
+   Homepage hero
+   ========================= */
+.hero {
+  text-align: center;
+}
+
+.hero img {
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero figcaption {
+  margin-top: 32px;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   Generic figures
+   ========================= */
+figure {
+  margin-bottom: 80px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   Lists
+   ========================= */
+ul {
+  list-style: none;
+}
+
+/* =========================
+   Series list with thumbnails
+   ========================= */
+.series-list {
+  margin-top: 56px;
+}
+
+.series-list li {
+  margin-bottom: 32px;
+}
+
+.series-list a {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.series-list img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+.series-list span {
+  font-size: 14px;
+}
+
+/* =========================
+   Simple link lists
+   ========================= */
+li a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Artwork metadata
+   ========================= */
+.metadata {
+  margin-top: 24px;
+  font-size: 13px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  max-width: 900px;
+  margin: 120px auto 40px auto;
+  padding: 0 24px;
+  font-size: 12px;
+  color: #000000;
+  text-align: center;
+}
+.artwork-header {
+  max-width: 640px;
+  margin-bottom: 64px;
+}
+
+.artwork-header h1 {
+  margin-bottom: 24px;
+}
+
+.artwork-header p {
+  margin-bottom: 24px;
+}
+.artwork-header {
+  max-width: 640px;
+  margin-bottom: 80px;
+}
+
+.artwork-header h1 {
+  margin-bottom: 24px;
+}
+
+.artwork-header p {
+  margin-bottom: 32px;
+}
+
+.metadata {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+
+.metadata li {
+  margin-bottom: 6px;
+}
