@@ -47,6 +47,7 @@ The focus is the work, not the implementation.
 
 The site is entirely static and organized as follows:
 
+```
 /
 ├── index.html        Home
 ├── about.html        Artist information
@@ -62,9 +63,10 @@ The site is entirely static and organized as follows:
     ├── olives/
     ├── faces/
     └── symbols/
+```
 
 Each series page introduces the work as a sequence.  
-Each artwork page is self contained and intentionally sparse.
+Each artwork page is self-contained and intentionally sparse.
 
 ---
 
@@ -91,9 +93,11 @@ No build step is required.
 
 ### Update workflow
 
+```bash
 git add .
 git commit -m "Describe the change"
 git push
+```
 
 GitHub Pages typically updates the site within seconds to one minute.
 
@@ -103,3 +107,5 @@ GitHub Pages typically updates the site within seconds to one minute.
 
 All artwork and written content are © Adkins Elloz.  
 All rights reserved.
+
+This repository is not licensed for reuse, redistribution, or modification of the artwork or text.
