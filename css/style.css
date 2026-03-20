@@ -55,6 +55,11 @@ nav a {
   letter-spacing: 0.02em;
 }
 
+nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* MAIN WRAPPER */
 main {
   max-width: 900px;
