@@ -88,6 +88,21 @@ main {
   margin-bottom: 5rem;
 }
 
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.kicker {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.65rem;
+}
+
 h1 {
   font-size: clamp(1.75rem, 2.8vw, 2.4rem);
   letter-spacing: -0.015em;
@@ -153,6 +168,12 @@ ul { margin: 0; padding: 0; list-style: none; }
   border: 1px solid var(--line);
   border-radius: 10px;
   overflow: hidden;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.series-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
 }
 
 .series-list a {
@@ -182,6 +203,17 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-radius: 10px;
   padding: 1rem 1rem 0.35rem;
   margin-bottom: 1.35rem;
+}
+
+.artwork-nav {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.artwork-nav a {
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 
 .metadata {
