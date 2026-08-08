@@ -9,7 +9,7 @@
   --muted: #5f5f5f;
   --line: #d8d8d2;
   --accent: #0f0f0f;
-  --max: 980px;
+  --max: 1100px;
 }
 
 * { box-sizing: border-box; }
@@ -154,6 +154,78 @@ p {
    elements: square corners throughout, no motion on hover. */
 .home-image img {
   border-radius: 0;
+}
+
+.home-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.home-hero .lede {
+  margin-bottom: 1.75rem;
+}
+
+.home-hero .home-image {
+  margin: 0;
+}
+
+.home-selected h2 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.home-grid a {
+  display: block;
+}
+
+.home-grid img {
+  border-radius: 0;
+}
+
+.home-grid span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.92rem;
+}
+
+/* Gallery hub: image-forward series cards */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-grid a {
+  display: block;
+}
+
+.gallery-grid img {
+  border-radius: 0;
+  margin-bottom: 0.85rem;
+}
+
+.gallery-grid h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.gallery-grid p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 0;
 }
 
 /* Lists + cards */
