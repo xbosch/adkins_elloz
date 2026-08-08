@@ -150,8 +150,10 @@ p {
   color: #fff;
 }
 
+/* Artwork photographs are treated as physical objects, not soft UI
+   elements: square corners throughout, no motion on hover. */
 .home-image img {
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 /* Lists + cards */
@@ -166,14 +168,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 .series-list li {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 0;
   overflow: hidden;
-  transition: transform 120ms ease, box-shadow 120ms ease;
 }
 
 .series-list li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+  border-color: var(--accent);
 }
 
 .series-list a {
@@ -187,7 +187,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .series-list img {
   width: 170px;
-  border-radius: 6px;
+  border-radius: 0;
 }
 
 .series-list span {
