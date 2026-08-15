@@ -1,5 +1,9 @@
 /* ------------------------------
-   Adkins Elloz — Site Styles v2
+   Adkins Elloz — Site Styles v3
+   Static HTML/CSS only. No JS, no web fonts, no animation —
+   system serif for names/titles, system sans for everything
+   utilitarian (nav, labels, metadata). The work is the display;
+   the interface stays quiet and square-cornered throughout.
 ------------------------------- */
 
 :root {
@@ -9,7 +13,9 @@
   --muted: #5f5f5f;
   --line: #d8d8d2;
   --accent: #0f0f0f;
-  --max: 1100px;
+  --max: 1200px;
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: ui-serif, Georgia, "Times New Roman", serif;
 }
 
 * { box-sizing: border-box; }
@@ -17,10 +23,11 @@
 html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* full-bleed sections use 100vw; guards against sub-pixel scrollbars */
 }
 
 body {
-  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--text);
   line-height: 1.65;
@@ -44,6 +51,7 @@ img {
   height: auto;
   display: block;
   background: #eceae4;
+  border-radius: 0; /* artwork photographs are physical objects, not UI: square corners throughout, no motion on hover */
 }
 
 /* Layout */
@@ -88,11 +96,12 @@ main {
   margin-bottom: 5rem;
 }
 
-.panel {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 1rem;
+/* Full-bleed: breaks an image or section out to the full viewport width
+   from inside the centered content column. No JS -- classic CSS trick. */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .kicker {
@@ -104,16 +113,19 @@ main {
 }
 
 h1 {
-  font-size: clamp(1.75rem, 2.8vw, 2.4rem);
-  letter-spacing: -0.015em;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  letter-spacing: -0.01em;
   margin: 0 0 1.2rem;
-  line-height: 1.15;
+  line-height: 1.08;
 }
 
 h2 {
-  font-size: 1.2rem;
-  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
   font-weight: 500;
+  margin: 0 0 0.5rem;
 }
 
 p {
@@ -123,25 +135,52 @@ p {
 }
 
 .lede {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: #2a2a2a;
   margin-bottom: 1.2rem;
 }
 
-/* Home */
+/* About / Contact: plain text column (no companion image in current content) */
 .home-intro {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2rem;
-  align-items: start;
+  max-width: 68ch;
+  margin-top: 0.5rem;
+}
+
+/* Home */
+.home-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.home-hero h1 {
+  font-size: clamp(3.2rem, 9vw, 6.5rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.home-hero .lede {
+  margin-bottom: 2.25rem;
+}
+
+.home-hero .home-image {
+  margin: 0;
+}
+
+/* Hero image: large, cropped to a controlled band so a tall portrait
+   painting doesn't force an enormous scroll on wide viewports. */
+.home-image img {
+  height: 82vh;
+  max-height: 900px;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .enter-link {
   display: inline-block;
   margin-top: 0.5rem;
-  padding: 0.55rem 0.9rem;
+  padding: 0.6rem 1rem;
   border: 1px solid var(--accent);
-  border-radius: 6px;
 }
 
 .enter-link:hover {
@@ -150,60 +189,39 @@ p {
   color: #fff;
 }
 
-/* Artwork photographs are treated as physical objects, not soft UI
-   elements: square corners throughout, no motion on hover. */
-.home-image img {
-  border-radius: 0;
-}
-
-.home-hero {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.home-hero .lede {
-  margin-bottom: 1.75rem;
-}
-
-.home-hero .home-image {
-  margin: 0;
-}
-
 .home-selected h2 {
+  font-family: var(--font-sans);
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .home-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .home-grid a {
   display: block;
 }
 
-.home-grid img {
-  border-radius: 0;
-}
-
 .home-grid span {
   display: block;
-  margin-top: 0.5rem;
-  font-size: 0.92rem;
+  margin-top: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
 }
 
-/* Gallery hub: image-forward series cards */
+/* Gallery hub: image-forward series cards, large and few per row */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
 }
 
 .gallery-grid a {
@@ -211,18 +229,16 @@ p {
 }
 
 .gallery-grid img {
-  border-radius: 0;
-  margin-bottom: 0.85rem;
+  margin-bottom: 1rem;
 }
 
 .gallery-grid h2 {
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 1.05rem;
-  margin-bottom: 0.25rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
 }
 
 .gallery-grid p {
+  font-family: var(--font-sans);
   color: var(--muted);
   font-size: 0.88rem;
   margin: 0;
@@ -231,50 +247,38 @@ p {
 /* Lists + cards */
 ul { margin: 0; padding: 0; list-style: none; }
 
+/* Series page: each work presented large and stacked, in sequence,
+   like walking a gallery wall -- not a compact thumbnail list. */
 .series-list {
-  display: grid;
-  gap: 1.25rem;
-  margin-top: 1.25rem;
-}
-
-.series-list li {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 0;
-  overflow: hidden;
-}
-
-.series-list li:hover {
-  border-color: var(--accent);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 2.5rem;
 }
 
 .series-list a {
-  display: grid;
-  grid-template-columns: 170px 1fr;
-  gap: 1rem;
-  align-items: start;
-  padding: 0.9rem;
+  display: block;
   text-decoration: none;
 }
 
 .series-list img {
-  width: 170px;
-  border-radius: 0;
+  width: 100%;
 }
 
 .series-list span {
-  display: inline-block;
-  margin-top: 0.35rem;
-  font-weight: 500;
+  display: block;
+  margin-top: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
 }
 
-/* Artwork page */
+/* Artwork page: image leads (it appears first in the HTML), full-bleed
+   and large; the title/description/metadata follow as a quiet label,
+   not a boxed card. */
 .artwork-header {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 1rem 1rem 0.35rem;
-  margin-bottom: 1.35rem;
+  padding-top: 1.6rem;
+  margin-bottom: 3rem;
+  border-top: 1px solid var(--line);
 }
 
 .artwork-nav {
@@ -305,9 +309,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .purchase-button {
   display: inline-block;
   margin: 0.6rem 0 1rem;
-  padding: 0.6rem 1rem;
+  padding: 0.65rem 1.1rem;
   border: 1px solid #1a1a1a;
-  border-radius: 6px;
   font-size: 0.92rem;
 }
 
@@ -317,7 +320,15 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: #fff;
 }
 
-figure { margin: 0 0 2rem; }
+figure { margin: 0 0 2.5rem; }
+
+.artwork-figure img {
+  height: 88vh;
+  max-height: 1100px;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center;
+}
 
 /* Footer */
 .site-footer {
@@ -345,16 +356,10 @@ figure { margin: 0 0 2rem; }
     gap: 0.75rem 1rem;
   }
 
-  .home-intro {
-    grid-template-columns: 1fr;
-  }
-
-  .series-list a {
-    grid-template-columns: 1fr;
-  }
-
-  .series-list img {
-    width: 100%;
+  .home-image img,
+  .artwork-figure img {
+    height: 58vh;
+    min-height: 320px;
   }
 
   .site-footer {
