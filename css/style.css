@@ -405,6 +405,39 @@ figure { margin: 0 0 2.5rem; }
 
 .book-nav a { color: var(--muted); }
 
+/* Paired work: a compact link from a poem section to the painting it's
+   read alongside, and back. Deliberately small -- the poem stays the
+   focus of its own page, this is a pointer, not a hero image. */
+.paired-work {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: 360px;
+  margin: 1.75rem 0 0.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.paired-work img {
+  width: 84px;
+  flex-shrink: 0;
+}
+
+.paired-work .paired-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.paired-work .paired-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
 /* Footer */
 .site-footer {
   margin-top: 3rem;
