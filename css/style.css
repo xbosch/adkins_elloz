@@ -330,6 +330,81 @@ figure { margin: 0 0 2.5rem; }
   object-position: center;
 }
 
+/* Poems: table of contents (book index) and inter-poem structure */
+.poem-original {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.toc-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.toc-list li {
+  border-top: 1px solid var(--line);
+  padding: 1.4rem 0;
+}
+
+.toc-list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.toc-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.toc-list h2 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.toc-list .toc-original {
+  font-family: var(--font-sans);
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.toc-list .toc-count {
+  font-family: var(--font-sans);
+  color: var(--muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.poem-block {
+  padding-top: 1.6rem;
+  margin-bottom: 2.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.poem-block h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.poem-block p {
+  max-width: 60ch;
+}
+
+.book-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.book-nav a { color: var(--muted); }
+
 /* Footer */
 .site-footer {
   margin-top: 3rem;
